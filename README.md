@@ -9,3 +9,5 @@ At the output, you will receive a CSV file with the following contents
 | VM2  | Pool1  | 192.168.1.200| Job A |
 | VM3  | Pool1  | 192.168.1.210| Job B |
 | VM4  | Pool2  | 192.168.1.210| Job A, Job B |
+
+Required for work PowerCli and VeeamPSSnapIn
