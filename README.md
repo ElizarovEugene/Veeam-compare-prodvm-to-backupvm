@@ -1,7 +1,5 @@
 # Veeam compare prod vm to backuped vm
-Script for searching productive VMs from VMware in backup tasks
-You can use several servers of vCenter and/or several servers VBR
-At the output, you will receive a CSV file with the following contents
+Script for searching productive VMs from VMware in backup tasks. You can use several servers of vCenter and/or several servers VBR. At the output, you will receive a CSV file with the following contents. If the virtual machine is in multiple tasks, the script also recognizes such situations.
 
 | VM name  | Resource Pool | vCenter IP | Job name|
 | ------------- | ------------- |------------- |------------- |
