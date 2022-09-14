@@ -1,4 +1,4 @@
-Add-PSSnapin -Name VeeamPSSnapIn
+Get-Module -ListAvailable -Name Veeam.Backup.PowerShell | Import-Module -ea SilentlyContinue 
 Get-Module -Name VMware* -ListAvailable | Import-Module -ea SilentlyContinue 
 
 $vmhash = @{};
