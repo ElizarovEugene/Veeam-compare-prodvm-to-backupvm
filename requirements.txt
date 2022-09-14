@@ -1,0 +1,5 @@
+pyVmomi
+requests
+sqlite3
+urllib3
+xlsxwriter
