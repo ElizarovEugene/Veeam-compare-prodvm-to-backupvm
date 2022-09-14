@@ -11,4 +11,7 @@ Script for searching productive VMs from VMware in backup tasks. You can use sev
 
 Required for work PowerCli and Veeam.Backup.PowerShell for PS servion
 
-Required for work pyVmomi for Python servion
+Required for work pyVmomi for Python vervion. Use:
+```
+pip install -r requirements.txt
+```
