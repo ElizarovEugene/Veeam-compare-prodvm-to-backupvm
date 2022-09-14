@@ -8,4 +8,7 @@ Script for searching productive VMs from VMware in backup tasks. You can use sev
 | VM3  | Pool1  | 192.168.1.210| Job B |
 | VM4  | Pool2  | 192.168.1.210| Job A, Job B |
 
-Required for work PowerCli and VeeamPSSnapIn
+
+Required for work PowerCli and Veeam.Backup.PowerShell for PS servion
+
+Required for work pyVmomi for Python servion
