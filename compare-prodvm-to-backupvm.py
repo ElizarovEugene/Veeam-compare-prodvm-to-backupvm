@@ -72,14 +72,23 @@ class Veeam:
             sys.exit('Authorization faileds')
 
     # Get VMs in job
-    def get_job_info(self, jobId, jobName, c, conn):
-        r = requests.get(self.address + 'v1/backups/' + jobId + '/objects',
+    def get_job_info(self, job_id, job_name, c, conn):
+        r = requests.get(self.address + 'v1/backups/' + job_id + '/objects',
                          headers=self.headers,
                          verify=False
                          )
         parsed = json.loads(r.text)
         for vm in parsed['data']:
-            conn.execute('UPDATE vms SET job_name = "{}" WHERE name = "{}"'.format(jobName, vm['name']))
+            c.execute('SELECT job_name FROM vms WHERE name = "{}"'.format(vm['name']))
+            exist_job = c.fetchone()
+            if exist_job == None:
+                new_job_name = job_name
+            else:
+                if exist_job[0] != None:
+                    new_job_name = exist_job[0] + ', ' + job_name
+                else:
+                    new_job_name = job_name
+            conn.execute('UPDATE vms SET job_name = "{}" WHERE name = "{}"'.format(new_job_name, vm['name']))
 
     # Get jost
     def get_jobs(self, c, conn):
